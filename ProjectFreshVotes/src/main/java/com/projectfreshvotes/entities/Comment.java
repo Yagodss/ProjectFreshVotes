@@ -1,0 +1,28 @@
+package com.projectfreshvotes.entities;
+
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+
+@Entity
+public class Comment {
+	
+	private CommentID pk;
+	private String text;
+	
+	@EmbeddedId
+	public CommentID getPk() {
+		return pk;
+	}
+	public void setPk(CommentID pk) {
+		this.pk = pk;
+	}
+	
+	@Column(length=500)
+	public String getText() {
+		return text;
+	}
+	public void setText(String text) {
+		this.text = text;
+	}
+}
